@@ -1,0 +1,150 @@
+{% extends 'quizzes/base.html' %}
+{% load static %}
+{% block head %}
+    <title>Quizz - Сайт квизов</title>
+    <link rel="stylesheet" href="https://dj5303.craftum.io/css/main.css?hash=85c0e4cea1004ae4ac7db4df473caee2">
+    {% endblock %}
+    {% block content %}
+        <body class="th1">
+            <div data-blocks-wrapper="">
+                <section id="n-999e963e-3be1-4bbb-939f-993c7aa51123" class="cli-block cli-cover cli-block--inverse" data-design-type="block-wrapper" data-resize="true">
+                    <div id="n-4c8a28b0-5454-43c7-95c8-37cecd51638b" class="cli-block__content cli-grid cli-block__content--cover cli-block__content--normal" data-design-type="grid" data-block-content="true" data-title="Блок" data-design-order="1">
+                        <div id="n-7c22eab4-580b-41b1-a2f4-38f9fa7c69ad" class="cli-col cli-col-start__xl--3 cli-col-end__xl--11 cli-col-start__md--1 cli-col-end__md--7 cli-col-start__sm--1 cli-col-end__sm--5" data-design-type="grid-col">
+                            <div id="n-51ba8b45-18f6-4b3f-b6bd-f01a2e53ea84" class="cli-chevron cli-animation-up-down">
+                                <a id="n-a655678a-7929-4938-95ea-c7234d77b527" class="cli-block-icon cli-block-icon--big" href="#n-6534b995-6613-4a8c-a3b2-bf8ce7e4759a" data-draggable="true" data-title="Шеврон" data-content-order="5" data-design-order="6">
+                                    <div id="n-4b880235-68fc-4b02-a94a-877b5928fbaa" class="cli-svg" data-design-type="icon-fixed" data-title="Иконка" data-widget-controls="true" data-multitype="true">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" role="presentation">
+                                            <g fill="currentColor">
+                                                <path d="M12 13.8238L6.6325 9.52978C6.43843 9.37452 6.15525 9.40599 5.99999 9.60006C5.84474 9.79412 5.8762 10.0773 6.07027 10.2326L12 14.9763L17.9297 10.2326C18.1238 10.0773 18.1552 9.79412 18 9.60006C17.8447 9.40599 17.5616 9.37452 17.3675 9.52978L12 13.8238Z" fill-rule="evenodd" clip-rule="evenodd"></path>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                </a>
+                            </div>
+                            <div id="n-5fafc91a-f689-4297-9ad3-85084f972e21" class="cli-block-title cli-block-title--gigantic cli-text-center cli-text-bold" data-design-type="text" data-draggable="true" data-title="Заголовок" data-content-order="1" data-design-order="2" data-seo="true">Создайте, делитесь и тренируйтесь с викторинами от Quizz</div>
+                            <div id="n-f44ea15f-6cf9-4384-8b24-4681d44c7531" class="cli-block-subtitle cli-block-subtitle--big cli-text-center cli-text-regular" data-design-type="text" data-draggable="true" data-title="Подзаголовок" data-content-order="2" data-design-order="3">Ваша удобная платформа для создания и распространения викторин</div>
+                            <div id="n-ca286fce-3fa2-4efb-9185-6f3f5b6483a3" class="cli-buttons cli-buttons--column-mobile cli-buttons--center">
+                                <a id="n-737ed3a7-ec28-45f5-8078-b0610d77d9c8" class="cli-button cli-button--big cli-button--primary" href="{% url 'users:register' %}" data-design-type="button" data-draggable="true" data-title="Кнопка #1" data-content-order="3" data-design-order="4">
+                                    <span id="n-9dc492b9-74f6-407c-a30d-8e9401ae60b9" data-design-type="text">Присоединиться</span>
+                                </a>
+                                <a id="n-ac68a2b0-80c5-436d-bad0-0f7aec7db7d2" class="cli-button cli-button--big cli-button--secondary" href="#n-6534b995-6613-4a8c-a3b2-bf8ce7e4759a" data-design-type="button" data-draggable="true" data-title="Кнопка #2" data-content-order="4" data-design-order="5"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="n-e2236726-4a5b-43e3-a8d6-e70560a232ef" class="cli-background" data-design-type="background" style="background: url(https://274418.selcdn.ru/cv08300-33250f0d-0664-43fc-9dbf-9d89738d114e/uploads/318037/7737ab4a-a65f-477d-a034-4f4e6e1afad4.jpg) no-repeat 50% 50%/cover;" data-fill="true" data-image="true" data-video="true" data-original-format="true">
+                        <div id="n-66e3a0f4-d480-4ccb-96ce-4a77cd8636bc" class="cli-background__fade" data-design-type="bg-fade" style="background: rgba(0,0,0,0.3)"></div>
+                    </div>
+                </section>
+                <section id="n-70287d05-6845-4f56-9a2b-d6d8315f87ad" class="cli-block cli-about cli-block--default" data-design-type="block-wrapper" data-resize="true">
+                    <div id="n-446138da-f24d-427d-a2c2-e534f630fe07" class="cli-block__content cli-grid cli-block__content--normal" data-design-type="grid" data-block-content="true" data-title="Блок" data-design-order="1">
+                        <div id="n-2e534907-3e56-43b4-9443-1d88551d007e" class="cli-col cli-col-start__xl--1 cli-col-end__xl--6 cli-col-start__md--1 cli-col-end__md--4 cli-col-start__sm--1 cli-col-end__sm--5 cli-content-v-center" data-design-type="grid-col">
+                            <div id="n-70b8dad5-4db9-4ef8-8625-30a363dbffaf" class="cli-double-image cli-double-image--round-corner" data-design-type="wrapper">
+                                <img id="n-0f41c5e8-f914-4ae2-8061-4b68aa99e5c9" class="cli-double-image__large cli-image--round-corner cli-image" data-design-type="image" data-title="Изображение#1" src="https://dj5303.craftum.iohttps://dj5303.craftum.io/images/kLd4w4Jok4Yz637-SBacj1S100c=/1920x/69b0914d-c9f3-4caf-83f3-927234915386.jpg" srcset="https://dj5303.craftum.io/images/kLd4w4Jok4Yz637-SBacj1S100c=/1920x/69b0914d-c9f3-4caf-83f3-927234915386.jpg 1920w,https://dj5303.craftum.io/images/74hX8WY1lNAaMaxdRtxucp38HA0=/1199x/69b0914d-c9f3-4caf-83f3-927234915386.jpg 1199w,https://dj5303.craftum.io/images/T5O5x5A2WSf_xhbuMLpz_3aZ-2E=/1023x/69b0914d-c9f3-4caf-83f3-927234915386.jpg 1023w,https://dj5303.craftum.io/images/OSpYLmrrLnnSQagt8tEcdf2tHRk=/767x/69b0914d-c9f3-4caf-83f3-927234915386.jpg 767w,https://dj5303.craftum.io/images/RLv11MbwqCnypQK9-HmMPy124fY=/666x/69b0914d-c9f3-4caf-83f3-927234915386.jpg 666w," alt="double image fisrt part" data-draggable="true" data-multitype="true" data-widget-controls="true" data-content-order="4" data-design-order="5" data-image-width="3936">
+                                    <img id="n-500f766d-7f94-4944-9a90-28c738bd65e8" class="cli-double-image__small cli-image--round-corner cli-image" data-design-type="image" data-title="Изображение#2" src="https://dj5303.craftum.iohttps://dj5303.craftum.io/images/BeSRh798lM5m-nENiv7CKbNLdzo=/0x/aa92a9f0-c790-4b63-8a19-384b64175c69.jpg" srcset="https://dj5303.craftum.io/images/BeSRh798lM5m-nENiv7CKbNLdzo=/0x/aa92a9f0-c790-4b63-8a19-384b64175c69.jpg 1920w,https://dj5303.craftum.io/images/s9RZNTQUu3cOG5OyxjppaJv_fD8=/1199x/aa92a9f0-c790-4b63-8a19-384b64175c69.jpg 1199w,https://dj5303.craftum.io/images/LrNf84KHHmZ4PrrOk7Tdyt4fVfo=/1023x/aa92a9f0-c790-4b63-8a19-384b64175c69.jpg 1023w,https://dj5303.craftum.io/images/0oBTapu_72Fbm_zRcO4_rmSET_I=/767x/aa92a9f0-c790-4b63-8a19-384b64175c69.jpg 767w,https://dj5303.craftum.io/images/Y12SqWjDZmlMfyEfxfclAgp0AVo=/666x/aa92a9f0-c790-4b63-8a19-384b64175c69.jpg 666w," alt="double image second part" data-draggable="true" data-multitype="true" data-widget-controls="true" data-content-order="5" data-design-order="6" data-image-width="1232"></div>
+                                </div>
+                                <div id="n-df2a9f2f-c9fc-4aa3-bc45-3a9db4e55c8e" class="cli-col cli-col-start__xl--7 cli-col-end__xl--13 cli-col-start__md--4 cli-col-end__md--7 cli-col-start__sm--1 cli-col-end__sm--5 cli-content-v-center" data-design-type="grid-col">
+                                    <div id="n-66ad72f5-d43f-4e04-8823-20ca4a3b16e5" class="cli-block-title cli-block-title--large cli-text-bold" data-design-type="text" data-draggable="true" data-title="Заголовок" data-content-order="1" data-design-order="2" data-seo="true" style="color: white">Создание викторин и распространение</div>
+                                    <div id="n-14bb36ec-d288-4770-86a9-92530faba665" class="cli-block-subtitle cli-block-subtitle--middle cli-text-regular" data-design-type="text" data-draggable="true" data-title="Подзаголовок" data-content-order="2" data-design-order="3" style="color: white">Простое и эффективное решение</div>
+                                    <div id="n-8c4ad82c-c02f-424d-b736-3fd407d3ffe8" class="cli-buttons cli-buttons--column-mobile">
+                                        <a id="n-e618d0be-522a-48b5-8d22-744d1f473d1a" class="cli-button cli-button--big cli-button--secondary" href="{% url 'quiz:create_quiz' %}" data-design-type="button" data-draggable="true" data-title="Кнопка" data-content-order="6" data-design-order="7">
+                                            <span style="color: black;" id="n-c6c4444d-193e-4cea-aa97-167f2e06f506" data-design-type="text">Попробовать сейчас</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="n-36e4faf3-b4c4-4cb2-bd73-f1dbbdb52523" class="cli-background" data-design-type="background" style="background: rgb(13 31 42)  no-repeat 50% 50%/cover;" data-fill="true" data-image="true" data-video="true"></div>
+                        </section>
+                        <section id="n-e5bae220-e541-4886-8fb4-6b7fc54df603" class="cli-block cli-advantages cli-block--default" data-design-type="block-wrapper" data-resize="true">
+                            <div id="n-33dff1b8-1919-44ac-be39-05b0226e5230" class="cli-block__content cli-grid cli-block__content--normal" data-design-type="grid" data-block-content="true" data-title="Блок" data-design-order="1">
+                                <div id="n-90ac4796-6b91-48c0-a2e9-49d71128862c" class="cli-col cli-col-start__xl--1 cli-col-end__xl--13 cli-col-start__md--1 cli-col-end__md--7 cli-col-start__sm--1 cli-col-end__sm--5" data-design-type="grid-col">
+                                    <div id="n-680ba8aa-9abb-4bac-b155-ad9de0f0191d" class="cli-block-title cli-block-title--gigantic cli-text-center cli-text-bold" data-design-type="text" data-draggable="true" data-title="Заголовок" data-content-order="1" data-design-order="2" data-seo="true" style="color: white">Почему Quizz - лучший выбор для викторин и их распространения?</div>
+                                    <ul id="n-9cce2df6-a4c7-4e9d-9710-aa5e18df3e28" class="cli-flex-list cli-flex-list--col-xl-3 cli-flex-list--col-md-2 cli-flex-list--col-sm-1 cli-flex-list--center" data-design-type="list" data-title="Преимущества" data-content-order="4" data-design-order="5">
+                                        <li id="n-a5a42386-3f61-45d1-b942-781ebdb64da2" class="cli-advantage-item cli-flex-list__item" data-design-type="list-item">
+                                            <div id="n-553c4368-adf5-43ec-9322-c339ea88bf09" class="cli-iconed-card">
+                                                <div id="n-96197dae-de27-4f0d-b720-e196f3bef3eb" class="cli-svg cli-iconed-card__icon" data-design-type="icon" data-draggable="true" data-title="Иконка" data-widget-controls="true" data-multitype="true">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24">
+                                                        <path d="m8.468 8.395-.002.001-.003.002Zm9.954-.187a1.237 1.237 0 0 0-.23-.175 1 1 0 0 0-1.4.411 5.782 5.782 0 0 1-1.398 1.778 8.664 8.664 0 0 0 .134-1.51 8.714 8.714 0 0 0-4.4-7.582 1 1 0 0 0-1.492.806 7.017 7.017 0 0 1-2.471 4.942l-.23.187a8.513 8.513 0 0 0-1.988 1.863 8.983 8.983 0 0 0 3.656 13.908 1 1 0 0 0 1.377-.926 1.05 1.05 0 0 0-.05-.312 6.977 6.977 0 0 1-.19-2.581 9.004 9.004 0 0 0 4.313 4.016.997.997 0 0 0 .715.038 8.995 8.995 0 0 0 3.654-14.863Zm-3.905 12.831a6.964 6.964 0 0 1-3.577-4.402 8.908 8.908 0 0 1-.18-.964 1 1 0 0 0-.799-.845.982.982 0 0 0-.191-.018 1 1 0 0 0-.867.5 8.959 8.959 0 0 0-1.205 4.718 6.985 6.985 0 0 1-1.176-9.868 6.555 6.555 0 0 1 1.562-1.458.745.745 0 0 0 .075-.055s.296-.245.306-.25a8.968 8.968 0 0 0 2.9-4.633 6.736 6.736 0 0 1 1.385 8.088 1 1 0 0 0 1.184 1.418 7.856 7.856 0 0 0 3.862-2.688 7 7 0 0 1-3.279 10.457Z"></path>
+                                                    </svg>
+                                                </div>
+                                                <div id="n-e544edae-adc3-477f-bc31-e0d55c48b03e" class="cli-iconed-card__title cli-text-medium cli-text-center" data-design-type="text" data-draggable="true" data-title="Заголовок" style="color: white">Создание захватывающих викторин</div>
+                                                <p id="n-6450bead-2a9a-48b4-8284-31bf9ae8b4c9" class="cli-iconed-card__description cli-text-center" data-design-type="text" data-draggable="true" data-title="Подзаголовок" style="color: rgba(255, 255, 255, 0.811)">Привлекайте вашу аудиторию с помощью интерактивных викторин, которые захочется проходить снова и снова.</p>
+                                            </div>
+                                        </li>
+                                        <li id="n-e28556b7-e22d-445e-b46d-97dc0247d13e" class="cli-advantage-item cli-flex-list__item" data-design-type="list-item">
+                                            <div id="n-3063a75c-ee3f-4d2f-b131-f0f6ed022904" class="cli-iconed-card">
+                                                <div id="n-5f508901-226b-4cab-9c4c-dd3522043bf8" class="cli-svg cli-iconed-card__icon" data-design-type="icon" data-draggable="true" data-title="Иконка" data-widget-controls="true" data-multitype="true">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                        <path d="M21.3,10.08A3,3,0,0,0,19,9H14.44L15,7.57A4.13,4.13,0,0,0,11.11,2a1,1,0,0,0-.91.59L7.35,9H5a3,3,0,0,0-3,3v7a3,3,0,0,0,3,3H17.73a3,3,0,0,0,2.95-2.46l1.27-7A3,3,0,0,0,21.3,10.08ZM7,20H5a1,1,0,0,1-1-1V12a1,1,0,0,1,1-1H7Zm13-7.82-1.27,7a1,1,0,0,1-1,.82H9V10.21l2.72-6.12A2.11,2.11,0,0,1,13.1,6.87L12.57,8.3A2,2,0,0,0,14.44,11H19a1,1,0,0,1,.77.36A1,1,0,0,1,20,12.18Z"></path>
+                                                    </svg>
+                                                </div>
+                                                <div id="n-927e98fd-cd33-447e-9ba9-acf240366fc7" class="cli-iconed-card__title cli-text-medium cli-text-center" data-design-type="text" data-draggable="true" data-title="Заголовок" style="color: white">Распространение викторин</div>
+                                                <p id="n-4aff4cb8-23a3-4802-8ece-52b4fc186e42" class="cli-iconed-card__description cli-text-center" data-design-type="text" data-draggable="true" data-title="Подзаголовок" style="color: rgba(255, 255, 255, 0.811)">Делитесь своими викторинами везде, где ваша целевая аудитория собирается онлайн - социальные сети, сайты и сообщества.</p>
+                                            </div>
+                                        </li>
+                                        <li id="n-32df2f55-00c6-464d-b991-e463893b907e" class="cli-advantage-item cli-flex-list__item" data-design-type="list-item">
+                                            <div id="n-1c6fb4cd-c85f-42ec-9a38-919303758f95" class="cli-iconed-card">
+                                                <div id="n-d3968b1a-590f-476b-b954-bb4d3543b2d1" class="cli-svg cli-iconed-card__icon" data-design-type="icon" data-draggable="true" data-title="Иконка" data-widget-controls="true" data-multitype="true">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                        <path d="M19.87,8.6A1,1,0,0,0,19,8H14.42l1.27-4.74a1,1,0,0,0-.17-.87A1,1,0,0,0,14.73,2h-7a1,1,0,0,0-1,.74l-2.68,10a1,1,0,0,0,.17.87,1,1,0,0,0,.8.39H8.89L7.08,20.74a1,1,0,0,0,1.71.93l10.9-12A1,1,0,0,0,19.87,8.6Zm-9.79,8.68,1.07-4a1,1,0,0,0-.17-.87,1,1,0,0,0-.79-.39H6.35L8.49,4h4.93L12.15,8.74a1,1,0,0,0,1,1.26h3.57Z"></path>
+                                                    </svg>
+                                                </div>
+                                                <div id="n-337bde6f-8ab8-438a-a403-d8ef4a4de299" class="cli-iconed-card__title cli-text-medium cli-text-center" data-design-type="text" data-draggable="true" data-title="Заголовок" style="color: white">Удобное использование</div>
+                                                <p id="n-0da8b782-389a-4cdb-9c6b-51c4bb688658" class="cli-iconed-card__description cli-text-center" data-design-type="text" data-draggable="true" data-title="Подзаголовок" style="color: rgba(255, 255, 255, 0.811)">Наши интуитивно понятные инструменты позволяют создавать и распространять ваши викторины без необходимости программирования или сложной настройки.</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div id="n-e3f626c9-91cd-4387-935e-3d6047aa683e" class="cli-background" data-design-type="background" style="background:rgb(15, 15, 15) no-repeat 50% 50%/cover" data-fill="true" data-image="true" data-video="true"></div>
+                        </section>
+                        <section id="n-6534b995-6613-4a8c-a3b2-bf8ce7e4759a" class="cli-block cli-stages cli-block--default" data-design-type="block-wrapper" data-resize="true">
+                            <div id="n-3909a090-c65c-4ccd-9042-ce4fed45495c" class="cli-block__content cli-grid cli-block__content--normal" data-design-type="grid" data-block-content="true" data-title="Блок" data-design-order="1">
+                                <div id="n-7f28a381-4a21-4d67-881d-4db113479176" class="cli-col cli-col-start__xl--3 cli-col-end__xl--11 cli-col-start__md--1 cli-col-end__md--7 cli-col-start__sm--1 cli-col-end__sm--5" data-design-type="grid-col">
+                                    <div id="n-c64aeb79-4b7d-42bf-a17d-849b33a30472" class="cli-block-title cli-block-title--gigantic cli-text-center cli-text-bold" data-design-type="text" data-draggable="true" data-title="Заголовок" data-content-order="1" data-design-order="2" data-seo="true" style="color: white">Почему выбирают Quizz?</div>
+                                    <div id="n-e97b4b3f-fd91-4b33-b193-2b2b6a49c818" class="cli-block-subtitle cli-block-subtitle--big cli-text-center cli-text-medium" data-design-type="text" data-draggable="true" data-title="Подзаголовок" data-content-order="2" data-design-order="3" style="color: white">Узнайте, как наши викторины могут улучшить ваши знания и развлечь вас!</div>
+                                </div>
+                                <div id="n-f6fabade-bf58-4886-8eaa-af6ee4a86cee" class="cli-col cli-col-start__xl--3 cli-col-end__xl--11 cli-col-start__md--1 cli-col-end__md--7 cli-col-start__sm--1 cli-col-end__sm--5" data-design-type="grid-col">
+                                    <ul id="n-c80b05a0-04db-4e6f-9ed4-231adf1fb0f7" class="cli-stage-list cli-stage-list--default" data-design-type="list" data-title="Этапы работ" data-content-order="3" data-design-order="4">
+                                        <li id="n-1258e9f3-d0c4-4d1e-8c9a-3d225c7fedf4" class="cli-stage-list__item" data-design-type="list-item">
+                                            <div id="n-83803634-48a8-476c-876a-c9bbfc645e6f" class="cli-stage-list__preview">
+                                                <div id="n-ac747ddb-1a05-4d17-9eb5-75d65f838ef5" class="cli-stage-list__marker" data-draggable="true" data-design-type="shape" data-title="Карточка">
+                                                    <div id="n-de075e3e-2baf-4662-a2a7-da94777cc438" class="cli-stage-list__text" data-design-type="text" data-draggable="true" data-title="Цифра">1</div>
+                                                </div>
+                                                <div id="n-5cdfbe83-72a4-4eba-abbd-95ef57d4f05c" class="cli-stage-list__separator" data-draggable="true" data-design-type="shape" data-title="Линия"></div>
+                                            </div>
+                                            <div id="n-4a1dc863-73dc-4cb8-8181-357df339555b" class="cli-stage-article cli-stage-list__content">
+                                                <div id="n-2b007fd2-d2ff-4d74-8082-fd6012a1b31c" class="cli-stage-article__title" data-design-type="text" data-draggable="true" data-title="Заголовок" style="color: white">Легкое создание викторин</div>
+                                                <p id="n-8729862f-4f94-4fb4-a345-9f3f092ef09c" class="cli-stage-article__text" data-design-type="text" data-draggable="true" data-title="Текст" style="color: white">Создавайте увлекательные викторины всего за несколько минут с помощью нашего интуитивно понятного интерфейса. Никаких технических навыков не требуется!</p>
+                                            </div>
+                                        </li>
+                                        <li id="n-266d5663-34fd-4022-b9cf-1ba8232874cc" class="cli-stage-list__item" data-design-type="list-item">
+                                            <div id="n-5948e3d9-32bc-4676-a124-5698d08ae4ca" class="cli-stage-list__preview">
+                                                <div id="n-ba2037e0-ec37-4778-b630-1e499ac3d1aa" class="cli-stage-list__marker" data-draggable="true" data-design-type="shape" data-title="Карточка">
+                                                    <div id="n-01ebadcd-77f4-4101-962c-4e81fdc25fd0" class="cli-stage-list__text" data-design-type="text" data-draggable="true" data-title="Цифра">2</div>
+                                                </div>
+                                                <div id="n-0cada6ea-d118-4a8a-93fb-d2e6e5f1d5ba" class="cli-stage-list__separator" data-draggable="true" data-design-type="shape" data-title="Линия"></div>
+                                            </div>
+                                            <div id="n-4c0a0319-3727-45f8-9bc4-c6eb251f7bc1" class="cli-stage-article cli-stage-list__content">
+                                                <div id="n-7b8c2f03-1ad6-4210-8628-7d3ffc23e63e" class="cli-stage-article__title" data-design-type="text" data-draggable="true" data-title="Заголовок" style="color: white">Прокачайте свои знания</div>
+                                                <p id="n-0e4340f6-5e1c-4852-83b7-94ffc7239488" class="cli-stage-article__text" data-design-type="text" data-draggable="true" data-title="Текст" style="color: white">Наши викторины предлагают увлекательный способ тренировки и расширения ваших знаний. Учите новое, проверяйте свои знания и улучшайте свои навыки!</p>
+                                            </div>
+                                        </li>
+                                        <li id="n-5cce5b81-27f2-46da-9571-8c16553e2ed6" class="cli-stage-list__item" data-design-type="list-item">
+                                            <div id="n-3edb14a6-9434-4896-9eec-ebdfbd8bfd62" class="cli-stage-list__preview">
+                                                <div id="n-293f8d06-893e-4f62-9175-8a1c79343b11" class="cli-stage-list__marker" data-draggable="true" data-design-type="shape" data-title="Карточка">
+                                                    <div id="n-d2b1a8e9-1330-496c-953c-06cc8a4af9a5" class="cli-stage-list__text" data-design-type="text" data-draggable="true" data-title="Цифра">3</div>
+                                                </div>
+                                                <div id="n-bf53af5e-95fa-4685-bfb4-04b20cd31ef6" class="cli-stage-list__separator" data-draggable="true" data-design-type="shape" data-title="Линия"></div>
+                                            </div>
+                                            <div id="n-89dc5df2-718b-4496-b778-8992ec60acd3" class="cli-stage-article cli-stage-list__content">
+                                                <div id="n-118b6f0b-6271-455a-90a2-313630d3e959" class="cli-stage-article__title" data-design-type="text" data-draggable="true" data-title="Заголовок" style="color: white">Легкость и доступность</div>
+                                                <p id="n-ffc910ab-195f-41ef-bac0-0921110bb195" class="cli-stage-article__text" data-design-type="text" data-draggable="true" data-title="Текст" style="color: white">Наш сервис был разработан с учетом удобства пользователя. Вы можете получить доступ к викторинам с любого устройства и в любое время, наслаждаясь учебой и развлечением где угодно!</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div id="n-e251878a-8d03-4a64-8405-77b0ffc31a77" class="cli-background" data-design-type="background" style="background:rgb(39, 39, 39) no-repeat 50% 50%/cover" data-fill="true" data-image="true" data-video="true"></div>
+                        </section>
+                    </div>
+                {% endblock %}

@@ -1,0 +1,117 @@
+{% extends 'quizzes/base.html' %}
+{% block content %}
+    {% load static %}
+    <title>Quizz - {{ user_page.username }}</title>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Lato:400,700,900,300);
+
+        body {
+            height: 100%;
+            background-color: #333;
+            color: whitesmoke;
+            font-size: 16px;
+            font-family: 'Lato';
+        }
+        .flex {
+            -webkit-box-flex: 1;
+            -ms-flex: 1 1 auto;
+            flex: 1 1 auto
+        }
+        .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+            background-color: rgba(158, 49, 158, 0.585);
+        }
+        .nav-link, .nav-link:hover, .nav-link:checked {
+            background-color: darkviolet;
+            color:white;
+        }
+    </style>
+    <div class="container" style="padding: 5%;">
+        <div class="row py-5 px-4">
+            <div class="shadow rounded overflow-hidden">
+                <div class="px-4 pt-0 pb-4 bg-dark">
+                    <div class="media align-items-end profile-header">
+                        <div class="profile mr-3">
+                            <img src="{{ user.photo.url }}" alt="..." width="130" class="rounded mb-2 img-thumbnail">
+                            </div>
+                            <div class="media-body mb-5 text-white">
+                                <h4 class="mt-0 mb-0">{{ user_page.username }}</h4>
+                                {% if user_page.email %}
+                                    <h4 class="text-break fs-4 font-monospace">{{ user_page.email }}</h4>
+                                {% else %}
+                                    <h4 class="text-break fs-4 font-monospace">-</h4>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="py-4 px-4">
+                        <div class="page-content page-container" id="page-content">
+                            <div class="row container d-flex">
+                                <div class="col">
+                                    <div class="mb-3">
+                                        <ul class="nav nav-pills" id="myTab" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home2" role="tab" aria-controls="home" aria-selected="true">Созданные квизы</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile2" role="tab" aria-controls="profile" aria-selected="false">Пройденные квизы</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-content">
+                                        <div class="tab-pane fade show active" id="home2" role="tabpanel" aria-labelledby="home-tab">
+                                            <div class="row">
+                                                {% if created_quizes %}
+                                                    <div class="container mt-4"></div>
+                                                    <div class="row g-4">
+                                                        {% for quiz in created_quizes %}
+                                                            <div class="col md-4">
+                                                                <a style="text-decoration: none;" class="card" href="{% url 'quiz:single_quiz' quiz.id %}">
+                                                                    <div class="card-body">
+                                                                        <h3 class="card-title">{{ quiz.name }}</h3>
+                                                                        <h4 class="card-subtitle mb-2 text-muted">Количество вопросов: {{ quiz.num_questions }}</h4>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                        {% endfor %}
+                                                    </div>
+                                                {% else %}
+                                                    <p>Нет созданных квизов.</p>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="profile2" role="tabpanel" aria-labelledby="profile-tab">
+                                            <div class="row">
+                                                {% if completed_quizes %}
+                                                    <div class="container mt-4"></div>
+                                                    <div class="row g-4">
+                                                        {% for quiz in completed_quizes %}
+                                                            <div class="col md-4">
+                                                                <a style="text-decoration: none;" class="card" href="{% url 'quiz:single_quiz' quiz.id %}">
+                                                                    <div class="card-body">
+                                                                        <h3 class="card-title">{{ quiz.name }}</h3>
+                                                                        <h4 class="card-subtitle mb-2 text-muted">Создатель:
+                                                                            {{ quiz.creator.username }}</h4>
+                                                                        <h4 class="card-subtitle mb-2 text-muted">Количество вопросов:
+                                                                            {{ quiz.total_questions }}</h4>
+                                                                        <h4 class="card-subtitle mb-2 text-muted">Правильных ответов:
+                                                                            {{ quiz.num_correct }}</h4>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                        {% endfor %}
+                                                    </div>
+                                                {% else %}
+                                                    <p>Нет пройденных квизов.</p>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

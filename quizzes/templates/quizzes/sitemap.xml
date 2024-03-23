@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+		<!--	created with www.mysitemapgenerator.com	-->
+		<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+	<loc>https://quizzsite.pythonanywhere.com/</loc>
+	<lastmod>2024-01-10T12:18:53+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://quizzsite.pythonanywhere.com/quizes/</loc>
+	<lastmod>2024-01-10T12:18:53+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://quizzsite.pythonanywhere.com/users/login/</loc>
+	<lastmod>2024-01-10T12:18:53+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://quizzsite.pythonanywhere.com/users/register/</loc>
+	<lastmod>2024-01-10T12:18:53+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://quizzsite.pythonanywhere.com/users/logout/</loc>
+	<lastmod>2024-01-10T12:18:53+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://quizzsite.pythonanywhere.com/users/profile/</loc>
+	<lastmod>2024-01-10T12:18:53+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://quizzsite.pythonanywhere.com/quizes/material/create</loc>
+	<lastmod>2024-01-10T12:18:58+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+</urlset>

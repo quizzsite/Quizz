@@ -1,0 +1,13 @@
+{% extends 'quizzes/base.html' %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/quiz/index.css' %}">
+        <title>Quizz - Справочный материал</title>
+    <div class="container">
+        <form>
+            <h3 class="question_title">{{ material.name }}</h3>
+            <br>
+            <p>{{ material.text | safe }}</p>
+        </form>
+    </div>
+{% endblock %}

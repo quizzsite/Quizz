@@ -1,0 +1,20 @@
+{% extends 'quizzes/base.html' %}
+{% load static %}
+{% block content %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/quiz/index.css' %}">
+
+    <title>Quizz - Результаты {{ quiz.quiz_title }}</title>
+    <div class="container">
+        <form>
+        <h3 class="question_title">Результаты</h3>
+        <h4 class="form-label">Вопросов: {{ total_questions }}</h4>
+<!--         <h4 class="form-label">Верных: {{ num_correct }}</h4>
+        <h4 class="form-label">Частично верных: {{ num_partially_true }}</h4>
+        <h4 class="form-label">Неверных: {{ num_wrong }}</h4> -->
+        <h4 class="form-label">Процент правильных: {{ accuracy_formatted }}</h4>
+        <a class="btn" href="{% url 'quiz:index' %}">К квизам</a>
+
+        <a class="btn" href="{% url 'quiz:single_quiz' quiz.id %}">Ещё раз</a>
+      </div>
+{% endblock %}

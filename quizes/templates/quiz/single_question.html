@@ -1,0 +1,99 @@
+{% extends 'quizzes/base.html' %}
+{% load static %}
+{% block content %}
+    <title>Quizz - Вопрос {{ q_num }}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/quiz/index.css' %}">
+<div class="container">
+    {% if error_message %}
+        <p><strong>{{ error_message }}</strong></p>
+    {% endif %}
+    <form method="post">
+    <div id="countdown" class="countdown">
+        <p style="background-color: rgb(88, 88, 88);" class="ml-auto col-auto alert">
+        Осталось: 
+        <span class="hours countdown-time"></span>:
+        <span class="minutes countdown-time"></span>:
+        <span class="seconds countdown-time"></span>
+    </p>
+    </div>
+    {% csrf_token %}
+    <h3 class="question_title">Вопрос {{ q_num }}</h3>
+    <p>{{ current_question.question_text | safe }}</p>
+    <div id="deadline-message" class="deadline-message">
+    </div>
+    <div class="row">
+    {% for f in form %}
+    <div class="col">
+        <div class="form-check">
+            <div class="answer-text"><label class="form-check-label" for="choice_{{ forloop.counter }}">{{ f.label }}</label></div>
+            {{ f }}
+        </div>
+    </div>
+      {% endfor %}
+    </div>
+      <br>
+      <br>
+      <button type="submit" name="submit" id="submit" onclick="" class="submit_button" onclick="this.disabled=true,this.form.submit();">Ответить</button>
+  </div>
+  <script>
+    function getTimeRemaining(endtime) {
+  var t = Date.parse(endtime) - Date.parse(new Date());
+  var seconds = Math.floor((t / 1000) % 60);
+  var minutes = Math.floor((t / 1000 / 60) % 60);
+  var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+  return {
+    total: t,
+    hours: hours,
+    minutes: minutes,
+    seconds: seconds
+  };
+}
+
+function initializeClock(id, endtime) {
+  var clock = document.getElementById(id);
+  var hoursSpan = clock.querySelector(".hours");
+  var minutesSpan = clock.querySelector(".minutes");
+  var secondsSpan = clock.querySelector(".seconds");
+
+  function updateClock() {
+    var t = getTimeRemaining(endtime);
+
+    if (t.total <= 0) {
+        var para = document.createElement("div");
+        para.innerHTML = '<h3>Время вышло</h3><button type="submit" name="continue" id="submit" onclick="" class="next_button" onclick="this.disabled=true,this.form.submit();">Продолжить</button>';
+
+        var element = document.getElementsByTagName("form")[0];
+        $(".row").last().remove();
+        $(".submit_button").last().remove();
+        element.appendChild(para);
+        alert("Time out")
+        clearInterval(timeinterval);
+        return true;
+    }
+
+    hoursSpan.innerHTML = ("0" + t.hours).slice(-2);
+    minutesSpan.innerHTML = ("0" + t.minutes).slice(-2);
+    secondsSpan.innerHTML = ("0" + t.seconds).slice(-2);
+  }
+
+  updateClock();
+  var timeinterval = setInterval(updateClock, 1000);
+}
+
+if ({{ current_question.timeout }}) {
+    var deadline = new Date(Date.parse(new Date()) + {{ current_question.timeout }} * 1000);
+    initializeClock("countdown", deadline);
+} else {
+    var hoursSpan = document.getElementsByClassName("hours")[0];
+    var minutesSpan = document.getElementsByClassName("minutes")[0];
+    var secondsSpan = document.getElementsByClassName("seconds")[0];
+    hoursSpan.innerHTML = "∞";
+    minutesSpan.innerHTML = "∞";
+    secondsSpan.innerHTML = "∞";
+};
+function disable() {
+        var element = document.getElementById('submit');
+        element.setAttribute("disabled", "disabled");
+    };
+  </script>
+{% endblock %}

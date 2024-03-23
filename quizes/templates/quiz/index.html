@@ -1,0 +1,76 @@
+{% extends 'quizzes/base.html' %}
+{% block head %}
+    <title>Quizz - Квизы</title>
+    <meta charset="UTF-8">
+{% endblock %}
+{% block content %}
+{% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/quiz/index.css' %}">
+    <div class="container-fluid">
+    <div class="row flex-nowrap">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0" style="background: #0d1f2a;">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                <form method="post" style="all: initial;">
+                    {% csrf_token %}
+                    <br>
+                    <h3 class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+
+                        <span class="fs-5 d-none d-sm-inline" style="font-family: Comic Sans MS; !important">Название</span>
+                    </h3>
+                    <div class="input-group rounded">
+                        <input type="search" name="name" class="form-control rounded" placeholder="Поиск"
+                            aria-label="Search" aria-describedby="search-addon" style="font-family: Comic Sans MS; !important" />
+                    </div>
+                    <br>
+                    <h3 class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                        <span class="fs-5 d-none d-sm-inline" style="font-family: Comic Sans MS; !important">Темы</span>
+                    </h3>
+                    <select style="font-family: Comic Sans MS; !important" class="form-control rounded" name="topic">
+                        <option style="font-family: Comic Sans MS; !important" value="{{ topic}}">---</option>
+                        {% for topic in topics %}
+                        <option style="font-family: Comic Sans MS; !important" value="{{ topic}}">{{ topic }}</option>
+                        {% endfor %}
+                    </select>
+                    <br>
+                    <br>
+                    <button class="form-control rounded" type="submit"><i class="black fas fa-search" aria-hidden="true" style="color: black;"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="col py-3" style="background: #272727;">
+            <div class="container">
+                <br>
+                {% if all_quiz_list %}
+                {% for quiz in all_quiz_list %}
+                <br>
+                <a class="card" style="text-decoration: none; " href="{% url 'quiz:single_quiz' quiz.id %}">
+                    <div class="card-body">
+                        <h1 class="card-title" style="font-size: 30px; text-decoration: none !important;">{{ quiz.quiz_title }}</h3>
+                            <h4 class="card-subtitle mb-2" style="font-size: 20px;text-decoration: none !important;">Создатель:
+                                {{ quiz.user_creator.username }}</h4>
+                            <h4 class="card-subtitle mb-2" style="font-size: 15px;text-decoration: none !important;"><i data-v-b2da2d2e=""
+                                    data-v-c83df0d5="" class="card-subtitle flex items-center fas fa-list"
+                                    style="font-size: 13px;text-decoration: none !important;"></i> Количество вопросов:
+                                {{ quiz.num_questions }}</h4>
+                            <h4 class="card-subtitle mb-2" style="font-size: 15px;text-decoration: none !important;">Тема: {{ quiz.topic }}</h4>
+                    </div>
+                </a>
+                {% endfor %}
+                {% else %}
+                <style type="text/css">
+                    .container {
+                        text-align: center;
+                        padding: 5%;
+                    }
+                </style>
+                <p class="h1" style="color: white; font-family: fantasy;">Мы ничего не нашли.</p>
+                <img class="img-fluid mx-auto d-block h1" style="height: auto; width: 18%;" src="{% static 'quiz/no_quizes.png' %}">
+                {% endif %}
+                <br>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
