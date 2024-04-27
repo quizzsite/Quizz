@@ -1,0 +1,16 @@
+{% extends 'quizzes/base.html' %}
+{% load static %}
+{% block content %}
+    <title>Quizz - Логин</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/quiz/index.css' %}">
+    <div class="container">
+        <form>
+            {% if user.email %}
+                <h3>Письмо было отправлено на почту: {{ user.email }}</h3>
+            {% else %}
+                <h3>Неверный код активации</h3>
+            {% endif %}
+            <h3 style="font-size: 25px;">Проверьте вашу почту и нажмите «Подтвердить», чтобы начать пользоваться нашими функциями</h3>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'quizzes/base.html' %}
+{% load static %}
+{% block head %}
+    <title>Quizz - Регистрация</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/quiz/index.css' %}">
+    <style>
+        body {
+            background-image: url("{% static 'users/background.jpg' %}");
+            background-size: 100% 100%;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    <div class="container">
+    <div class="registration-form">
+        <form method="POST">
+            <h3 class="question_title">Регистрация</h3>
+            <br>
+            {% csrf_token %}
+            <input type="hidden" name="next" value="{{ next }}" />
+            <div class="form-icon">
+                <span><i class="icon icon-user"></i></span>
+            </div>
+            <div class="form-error">{{ form.non_field_errors }}</div>
+            {% for f in form %}
+                <p><label class="form-label" for="{{ f.id_for_label }}">{{ f.label }}</label>{{ f }}</p>
+                <div class="form-error">{{ f.errors }}</div>
+            {% endfor %}
+            <div class="form-group">
+                <button type="submit" class="btn btn-block create-account" onclick="this.disabled=true,this.form.submit();">Регистрация</button>
+            </div>
+        </form>
+    </div>
+</div>
+        <br>
+        <br>
+        <br>
+{% endblock %}

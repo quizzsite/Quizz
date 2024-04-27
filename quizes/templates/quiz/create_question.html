@@ -1,0 +1,51 @@
+{% extends 'quizzes/base.html' %}
+{% load static %}
+{% block content %}
+    <title>Quizz - Создать вопрос</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/quiz/index.css' %}">
+    <div class="container">
+        <form method="post">
+            {% csrf_token %}
+            <div class="question_text_wrapper">
+                <h3 class="question_title">Вопрос {{ question_num }}:</h3>
+                {{ form.question_text }}
+                <p class="choice_label">Таймер:
+                <input class="text-input form-input item" type="number" min="0" style="color: black;" name="timeout" value="0" required="" id="id_timeout">
+                (0 для бесконечности) </p>
+            </div>
+            <br>
+            <div class="row">
+            <div class="choises">
+            </div>
+            <div class="form-row" style="margin-top:60px; justify-content: center; align-items: center;">
+            <button style="width: 40%" type="button" class="btn btn-success interest-list-new" onclick="addField()">Add Items +</button>
+            <button style="width: 40%" type="button" class="btn btn-success interest-list-new" onclick="del()">Remove Items -</button>
+            </div>
+            <button type="submit" name="continue" class="btn btn-primary btn-lg">Продолжить</button>
+            <button type="submit" name="stop" class="btn btn-primary btn-lg">Завершить</button>
+        </form>
+    </div>
+    <script>
+var n = 1
+var para = document.createElement("div");
+para.innerHTML = '<div class="choice_text_wrapper"><label class="choice_label" for="">Вариант: '+String(n)+'<div class="container mt-4"><div class="row"><div class="col-md-6"><div class="form-group d-flex align-items-center"><input type="checkbox" name="choise_'+String(n)+'_correctness" class="form-check" id="id_choise_'+String(n)+'_correctness"><br><input type="text" name="choise_'+String(n)+'" class="text-input form-input form-control item" for="choise_'+String(n)+'_correctness" id="id_choise_'+String(n)+'"></div></div></div></div>';
+
+var element = document.getElementsByClassName("choises")[0];
+element.appendChild(para);
+
+function addField() {
+    n += 1;
+    var para = document.createElement("div");
+    para.innerHTML = '<div class="choice_text_wrapper"><label class="choice_label" for="">Вариант: '+String(n)+'<div class="container mt-4"><div class="row"><div class="col-md-6"><div class="form-group d-flex align-items-center"><input type="checkbox" name="choise_'+String(n)+'_correctness" class="form-check" id="id_choise_'+String(n)+'_correctness"><br><input type="text" name="choise_'+String(n)+'" class="text-input form-input form-control item" for="choise_'+String(n)+'_correctness" id="id_choise_'+String(n)+'"></div></div></div></div>';
+
+    var element = document.getElementsByClassName("choises")[0];
+    element.appendChild(para);
+};
+function del() {
+    if (n > 1) {
+        $(".choice_text_wrapper").last().remove();
+        n -= 1;
+    }
+};
+    </script>
+    {% endblock %}

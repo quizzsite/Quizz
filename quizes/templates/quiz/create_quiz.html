@@ -1,0 +1,24 @@
+{% extends 'quizzes/base.html' %}
+{% load static %}
+{% block content %}
+    <title>Quizz - Создать квиз</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/quiz/index.css' %}">
+    <div class="container">
+        <form method="post">
+            <h3 class="question_title">Новый квиз</h3>
+            {% csrf_token %}
+            <div class="error_text">
+              {{ form.non_field_errors }}
+            </div>
+            {% for f in form %}
+                
+                <label class="quiz_name_label" for="{{ form.quiz_name.id_for_label }}">{{ f.label }}</label>
+                {{ f }}
+                {{ f.errors }}
+            {% endfor %}
+            <br>
+            <br>
+            <button class="submit_button" type="submit" onclick="this.disabled=true,this.form.submit();">Далее</button>
+        </form>
+    </div>
+{% endblock %}

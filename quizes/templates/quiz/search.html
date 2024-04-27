@@ -1,0 +1,33 @@
+{% extends 'quizzes/base.html' %}
+{% block content %}
+    {% load static %}
+    <title>Quizz - Квизы</title>
+    <meta charset="UTF-8">
+    <div class="container">
+        <br>
+        {% if all_quiz_list %}
+                    {% for quiz in all_quiz_list %}
+                    <br>
+                    <a class="card" style="text-decoration: none;" href="{% url 'quiz:single_quiz' quiz.id %}">
+                        <div class="card-body">
+                            <h1 class="card-title" style="font-size: 30px;">{{ quiz.quiz_title }}</h3>
+                            <h4 class="card-subtitle mb-2 text-muted" style="font-size: 20px;">Создатель:
+                                {{ quiz.user_creator.username }}</h4>
+                            <h4 class="card-subtitle mb-2 text-muted" style="font-size: 15px;"><i data-v-b2da2d2e="" data-v-c83df0d5="" class="card-subtitle flex items-center fas fa-list" style="font-size: 13px;"></i>  Количество вопросов:
+                                {{ quiz.num_questions }}</h4>
+                            <h4 class="card-subtitle mb-2 text-muted" style="font-size: 15px;">{{ quiz.topic }}</h4>
+                        </div>
+                    </a>
+                    {% endfor %}
+        {% else %}
+        <style type="text/css">.container {text-align: center; padding: 5%;}</style>
+            <p class="h1" style="color: white; font-family: fantasy;">Мы ничего не нашли.</p>
+            <img class="img-fluid mx-auto d-block h1" style="height: auto; width: 18%;" " src="{% static 'quiz/no_quizes.png' %}">
+        {% endif %}
+
+        <br>
+        <br>
+        <br>
+
+    </div>
+{% endblock %}

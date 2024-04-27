@@ -1,0 +1,116 @@
+{% extends 'quizzes/base.html' %}
+{% block content %}
+    {% load static %}
+    <title>Quizz - Профиль</title>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Lato:400,700,900,300);
+        body {
+            font-family: "Comic Sans MS"; !important
+            background-color: #272727;
+            text-decoration: none;
+        }
+        .container {
+            color: whitesmoke;
+            font-size: 16px;
+            font-family: 'Lato';
+        }
+        .flex {
+            -webkit-box-flex: 1;
+            -ms-flex: 1 1 auto;
+            flex: 1 1 auto
+        }
+        .nav-pills .nav-link.active,
+        .nav-pills .show > .nav-link {
+            background-color: #18293b;
+            font-family: "Comic Sans MS"; !important
+        }
+        .nav-link,
+        .nav-link:hover,
+        .nav-link:checked {
+            background-color: #3f5061;
+            color: white;
+            font-family: "Comic Sans MS"; !important
+        }
+        .card {
+            color: white;
+            text-decoration: none;
+            background-color: rgba(255, 255, 255, 0.13);
+            justify-content: center;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+            padding: 30px 35px;
+        }
+
+        .card:hover{
+            color: white;
+            transform: scale(1.001);
+            box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+        }
+    </style>
+    <div class="container" style="padding: 5%;">
+        <div class="row py-5 px-4">
+
+            <div class="shadow rounded overflow-hidden" style="background-color: #292929;">
+                <div class="px-4 pt-0 pb-4 bg-dark">
+                    <div class="media align-items-end profile-header">
+                        <div class="profile mr-3">
+                            <img src="{{ user.photo.url }}" alt="..." width="130" class="rounded mb-2 img-thumbnail">
+                                <a href="{% url 'users:password_change' %}" style="font-family: Comic Sans MS; !important" class="btn btn-dark btn-sm btn-block">Сменить пароль</a>
+                                <a href="{% url 'users:logout' %}" style="font-family: Comic Sans MS; !important" class="btn btn-dark btn-sm btn-block">Выйти</a>
+                            </div>
+                            <div class="media-body mb-5 text-white">
+                                <h4 class="text-break fs-2 font-monospace">{{ user.username }}</h4>
+                                {% if user.email %}
+                                    <h4 class="text-break font-monospace" style="font-size: 15px;">email:
+                                        {{ user.email }}</h4>
+                                {% else %}
+                                    <h4 class="text-break font-monospace" style="font-size: 15px;">email: -</h4>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="py-4 px-4">
+                        <div class="page-content page-container" id="page-content">
+                            <div class="row container d-flex">
+                                <div class="col">
+                                    <div class="mb-3">
+                                        <ul class="nav nav-pills" id="myTab" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#created" role="tab" aria-controls="home" aria-selected="true">Созданные квизы</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-content">
+                                        <div class="tab-pane fade show active" id="created" role="tabpanel" aria-labelledby="home-tab">
+                                            <div class="row">
+                                                {% if created_quizes %}
+                                                    <div class="container mt-4"></div>
+                                                    <div class="row g-4">
+                                                        {% for quiz in created_quizes %}
+                                                            <div class="col md-4">
+                                                                <a class="card" style="text-decoration: none; " href="{% url 'quiz:single_quiz' quiz.id %}">
+                                                                    <div class="card-body">
+                                                                        <h1 class="card-title" style="font-size: 30px; text-decoration: none !important;">{{ quiz.quiz_title }}</h3>
+                                                                            <h4 class="card-subtitle mb-2" style="font-size: 15px;text-decoration: none !important;">Тема: {{ quiz.topic }}</h4>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                        {% endfor %}
+                                                    </div>
+                                                {% else %}
+                                                    <p>Нет созданных квизов.</p>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

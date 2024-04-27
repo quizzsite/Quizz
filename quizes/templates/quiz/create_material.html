@@ -1,0 +1,18 @@
+{% extends 'quizzes/base.html' %}
+{% load static %}
+{% block content %}
+    <title>Quizz - Создать материал</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/quiz/index.css' %}">
+    <div class="container">
+    {{form.media}}
+    <form method="post">
+        <h3 class="question_title">Создать материал</h3>
+        {% csrf_token %}
+        <label class="choice_label">{{ form.name }}</label>
+        <br>
+        <div class="col">
+        <div class="container">{{ form.text }}</div></div>
+        <button type="submit" onclick="this.disabled=true,this.form.submit();">Submit</button>
+    </form>
+    </div>
+{% endblock %}
