@@ -41,13 +41,10 @@ def search(request):
     if request.method == "POST":
         data = request.POST.dict()
         quiz_title = data["name"] or ""
-        if quiz_title == "trollface":
-            return render(request, 'quiz/trollface.html')
-        else:
-            topic = data["topic"] or ""
-            url = reverse('quiz:search')+f"?name={quiz_title}&topic={topic}"
-            HttpResponseRedirect(reverse('quiz:index'))
-            return HttpResponseRedirect(url)
+        topic = data["topic"] or ""
+        url = reverse('quiz:search')+f"?name={quiz_title}&topic={topic}"
+        HttpResponseRedirect(reverse('quiz:index'))
+        return HttpResponseRedirect(url)
     return render(request, 'quiz/index.html', context)
 
 def topic(request, topic):
