@@ -86,7 +86,8 @@ def single_quiz(request, quiz_id):
         'quiz_questions': quiz_questions,
         'num_questions': num_questions,
         'user_creator': quiz.user_creator,
-        'material': material
+        'material': material,
+        'url': request.build_absolute_uri(),
     }
     return render(request, 'quiz/single_quiz.html', context)
 
