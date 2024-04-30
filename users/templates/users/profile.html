@@ -56,7 +56,8 @@
                 <div class="px-4 pt-0 pb-4 bg-dark">
                     <div class="media align-items-end profile-header">
                         <div class="profile mr-3">
-                            <img src="{{ user.photo.url }}" alt="..." width="130" class="rounded mb-2 img-thumbnail">
+                            {{ user_page }}
+                            <img src="{% static 'users/default.png' %}" alt="..." width="130" class="rounded mb-2 img-thumbnail">
                                 <a href="{% url 'users:password_change' %}" style="font-family: Comic Sans MS; !important" class="btn btn-dark btn-sm btn-block">Сменить пароль</a>
                                 <a href="{% url 'users:logout' %}" style="font-family: Comic Sans MS; !important" class="btn btn-dark btn-sm btn-block">Выйти</a>
                             </div>

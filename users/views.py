@@ -66,11 +66,13 @@ def ulogout(request):
 def profile(request):
     created_quizes = eval(str(request.user.created_quizes))
     completed_quizes = eval(str(request.user.completed_quizes))
-    context = {'created_quizes': created_quizes, 'completed_quizes': completed_quizes, 'max_len': max([len(created_quizes), len(completed_quizes)])}
+    context = {'user': request.user, 'created_quizes': created_quizes, 'completed_quizes': completed_quizes, 'max_len': max([len(created_quizes), len(completed_quizes)])}
     return render(request, 'users/profile.html', context=context)
 
 def user_page(request, user_id):
-    user = get_object_or_404(User, pk=user_id)
+    print(user_id)
+    user = get_object_or_404(User, id=user_id)
+    print(user)
     created_quizes = eval(str(user.created_quizes))
     completed_quizes = eval(str(user.completed_quizes))
     context = {'user': request.user, "user_page": user, 'created_quizes': created_quizes, 'completed_quizes': completed_quizes, 'max_len': max([len(created_quizes), len(completed_quizes)])}

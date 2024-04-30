@@ -56,13 +56,13 @@
                 <div class="px-4 pt-0 pb-4 bg-dark">
                     <div class="media align-items-end profile-header">
                         <div class="profile mr-3">
-                            <img src="{{ user.photo.url }}" alt="..." width="130" class="rounded mb-2 img-thumbnail">
+                            <img src="{% static 'users/default.png' %}" alt="..." width="130" class="rounded mb-2 img-thumbnail">
                             </div>
                             <div class="media-body mb-5 text-white">
-                                <h4 class="text-break fs-2 font-monospace">{{ user.username }}</h4>
-                                {% if user.email %}
+                                <h4 class="text-break fs-2 font-monospace">{{ user_page.username }}</h4>
+                                {% if user_page.email %}
                                     <h4 class="text-break font-monospace" style="font-size: 15px;">email:
-                                        {{ user.email }}</h4>
+                                        {{ user_page.email }}</h4>
                                 {% else %}
                                     <h4 class="text-break font-monospace" style="font-size: 15px;">email: -</h4>
                                 {% endif %}
