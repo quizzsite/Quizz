@@ -34,7 +34,7 @@ class Choice(models.Model):
     correct_choise = models.BooleanField(default=False)
 
 class Material(models.Model):
-    name = models.CharField(null=True, blank=True, max_length=300000)
+    name = models.CharField(max_length=300000)
     text = models.CharField(null=True, blank=True, max_length=300000)
 
     def __str__(self):

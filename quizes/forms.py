@@ -7,8 +7,8 @@ from django_summernote.widgets import SummernoteWidget
 class CreateQuizForm(forms.Form):
     quiz_name = forms.CharField(max_length=50, label="Название", widget=forms.TextInput(attrs={'class': 'form-input form-control item'}))
     quiz_description = forms.CharField(max_length=50, label="Описание (необязательно)", widget=forms.TextInput(attrs={'class': 'form-input form-control item'}))
-    material = forms.ModelChoiceField(queryset=Material.objects.all(), required=False, widget=forms.Select(attrs={'class': 'form-input form-control item'}))
-    topic = forms.ModelChoiceField(queryset=Topic.objects.all().order_by("topic_name"), widget=forms.Select(attrs={'class': 'form-input form-control item'}))
+    material = forms.ModelChoiceField(label="Материалы", queryset=Material.objects.all(), required=False, widget=forms.Select(attrs={'class': 'form-input form-control item'}))
+    topic = forms.ModelChoiceField(label="Тема", queryset=Topic.objects.all().order_by("topic_name"), widget=forms.Select(attrs={'class': 'form-input form-control item'}))
 
 class SingleQuestionForm(forms.Form):
     def __init__(self, q_id, *args, **kwargs):

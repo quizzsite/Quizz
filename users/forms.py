@@ -17,9 +17,9 @@ class RegisterForm(forms.ModelForm):
         model = User
         fields = ['username', 'email', 'password']
         labels = {
-            'username': 'Username',
+            'username': 'Логин',
             'email': 'E-mail',
-            'password': 'Password',
+            'password': 'Пароль',
         }
         widgets = {
             'username': forms.TextInput(attrs={'class': 'form-input form-control item form-control item'}),
