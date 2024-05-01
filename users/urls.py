@@ -10,7 +10,7 @@ urlpatterns = [
 
     path('logout/', views.ulogout, name='logout'),
 
-    path('password-change/', views.UserPasswordChange.as_view(), name="password_change"),
+    # path('password-change/', views.UserPasswordChange.as_view(), name="password_change"),
 
     path('register/', views.register, name='register'),
 

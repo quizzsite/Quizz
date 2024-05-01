@@ -49,7 +49,7 @@ def register(request):
                 user.set_password(password)
                 user.save()
                 context = {"user": user, "url": request.get_host()}
-                return render(request, "users/login.html")
+                return HttpResponseRedirect(reverse("users:login"))
         else:
             form = RegisterForm()
         context = {"form": form}
@@ -82,3 +82,4 @@ class UserPasswordChange(PasswordChangeView):
     form_class = UserPasswordChangeForm
     success_url = reverse_lazy("users:profile")
     template_name = "users/password_change_form.html"
+    # <!-- <a href="{% url 'users:password_change' %}" style="font-family: Comic Sans MS; !important" class="btn btn-dark btn-sm btn-block">Сменить пароль</a> -->

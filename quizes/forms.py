@@ -32,4 +32,4 @@ class MaterialForm(forms.ModelForm):
     class Meta:
         model = Material
         fields = ['name', 'text']
-        widgets = {'text': SummernoteWidget(attrs={'class': 'form-control item'}), "name": forms.NumberInput(attrs={'class': 'form-input form-control item', 'width': 'auto', 'height': 'auto', 'min': 0})}
+        widgets = {'text': SummernoteWidget(attrs={'class': 'form-control item'}), "name": forms.TextInput(attrs={'class': 'form-input form-control item', 'width': 'auto', 'height': 'auto', 'min': 0})}

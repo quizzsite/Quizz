@@ -14,7 +14,6 @@
         <h4 class="form-label">Неверных: {{ num_wrong }}</h4> -->
         <h4 class="form-label">Процент правильных: {{ accuracy_formatted }}</h4>
         <a class="btn" href="{% url 'quiz:index' %}">К квизам</a>
-
         <a class="btn" href="{% url 'quiz:single_quiz' quiz.id %}">Ещё раз</a>
       </div>
 {% endblock %}
