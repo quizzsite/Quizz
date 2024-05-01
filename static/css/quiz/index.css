@@ -11,6 +11,7 @@ a:hover {
 
 h1, h2, h3, h4, span, a, p {
     font-family: Comic Sans MS; !important
+    color: white;
 }
 .quiz_title {
     color: white;

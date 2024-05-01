@@ -18,7 +18,7 @@
     </div>
     {% csrf_token %}
     <h3 class="question_title">Вопрос {{ q_num }}</h3>
-    <p>{{ current_question.question_text | safe }}</p>
+    <p style="background: white;">{{ current_question.question_text | safe }}</p>
     <div id="deadline-message" class="deadline-message">
     </div>
     <div class="row">

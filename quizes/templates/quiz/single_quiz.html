@@ -87,7 +87,7 @@
             <h3 class="question_title">Вопросы</h3>
             {% for question in quiz_questions %}
                 <form style="margin-top: 4%;">
-                    <h3>{{ question.question_text | safe }}</h3>
+                    <h3 style="color: white; !important">{{ question.question_text | safe }}</h3>
                     {% if question.timeout %}
                     <p>Время: {{ question.timeout }} секунд</p>
                     {% else %}
